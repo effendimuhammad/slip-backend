@@ -6,6 +6,9 @@ import {
   deletePartController,
   getPartBaseOnBuController,
   getTotalMasterPartController,
+  createMasterPartFileController,
+  insertMasterPartFileController,
+  downloadFile,
 } from "../controller/masterPartController.js";
 
 const router = express.Router();
@@ -23,5 +26,11 @@ router.get("/getEdit/:partnumber_id", getPartBaseOnBuController);
 
 //GET PART MASTER BASE ON BU
 router.get("/getPartMaster/:bu_code", getTotalMasterPartController);
+
+router.post("/createFile", createMasterPartFileController);
+
+router.post("/insertFile", insertMasterPartFileController);
+
+router.get("/downloadFile", downloadFile);
 
 export default router;

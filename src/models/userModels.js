@@ -7,7 +7,7 @@ export const getUserModels = () => {
                           ,[password] 
                           ,[email]
                           ,[createdAt]
-                      FROM [TEST].[dbo].[users]`;
+                      FROM [DX_EXPENSE_PART].[dbo].[EXPENSE_M_USERS]`;
   return db.query(SQLQuery);
 };
 
@@ -18,13 +18,13 @@ export const getUserUpdateModels = (id) => {
                           ,[password] 
                           ,[email]
                           ,[createdAt]
-                      FROM [TEST].[dbo].[users]
+                      FROM [DX_EXPENSE_PART].[dbo].[EXPENSE_M_USERS]
                       WHERE id = ${id}`;
   return db.query(SQLQuery);
 };
 
 export const updateUserUpdateModels = (body, id) => {
-  const SQLQuery = `UPDATE [TEST].[dbo].[users]
+  const SQLQuery = `UPDATE [DX_EXPENSE_PART].[dbo].[EXPENSE_M_USERS]
                     SET [username]  = '${body.username}',
                         [nim]       = '${body.nim}',
                         [email]     = '${body.email}',
@@ -34,7 +34,7 @@ export const updateUserUpdateModels = (body, id) => {
 };
 
 export const createUserModels = (username, nim, password, email) => {
-  const SQLQuery = `INSERT INTO [TEST].[dbo].[users]
+  const SQLQuery = `INSERT INTO [DX_EXPENSE_PART].[dbo].[EXPENSE_M_USERS]
                         ([username]
                         ,[nim]
                         ,[password]
@@ -50,7 +50,7 @@ export const createUserModels = (username, nim, password, email) => {
 };
 
 export const deleteUserModels = (id) => {
-  const SQLQuery = `DELETE FROM TEST.dbo.users
+  const SQLQuery = `DELETE FROM [DX_EXPENSE_PART].[dbo].[EXPENSE_M_USERS]
                     WHERE id = ${id}`;
   return db.query(SQLQuery);
 };

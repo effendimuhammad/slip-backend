@@ -10,7 +10,6 @@ import bcrypt from "bcryptjs";
 export const getUserController = async (req, res) => {
   try {
     const data = await getUserModels();
-    console.log("data", data);
 
     const myData = data.recordset;
     res.json({

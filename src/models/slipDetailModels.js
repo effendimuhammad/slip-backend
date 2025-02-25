@@ -1,13 +1,13 @@
 import db from "../config/db.js";
 
+//GET SLIP LIST
 export const getDetailPartSlipModels = (kode_slip) => {
   const SQLQuery = `
             SELECT 
                     e.id,
                     e.kode_slip,
-					e.bu_code,
-					e.bu_name,
-
+                    e.bu_code,
+                    e.bu_name,
                     e.partNumber,
                     e.partName,
                     e.quantity,
@@ -47,20 +47,6 @@ export const getDetailSlipUpdateModels = (id) => {
                       WHERE id = ${id}`;
   return db.query(SQLQuery);
 };
-// export const updateDetailSlipModels = (data, id) => {
-//   const { kode_slip, bu_code, bu_name, partNumber, partName, quantity, price } =
-//     data;
-//   const SQLQuery = `UPDATE [dbo].[EXPENSE_T_SLIP_DETAIL]
-//                     SET [kode_slip]     = '${kode_slip}'
-//                         ,[bu_code]      = '${bu_code}'
-//                         ,[bu_name]      = '${bu_name}'
-//                         ,[partNumber]   = '${partNumber}'
-//                         ,[partName]     = '${partName}'
-//                         ,[quantity]     = '${quantity}'
-//                         ,[price]        = '${price}
-//                     WHERE id = '${id}'`;
-//   return db.query(SQLQuery);
-// };
 
 export const updateDetailSlipModels = async (data, id) => {
   const { kode_slip, bu_code, bu_name, partNumber, partName, quantity, price } =

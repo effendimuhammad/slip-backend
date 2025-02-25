@@ -1,5 +1,6 @@
 import db from "../config/db.js";
 
+//JOIN DENGAN MASTER BU ACCESS LOGIN DENGAN NIM
 export const getAllBuSlipModels = (nim) => {
   const SQLQuery = `SELECT 
                       a.bu_code,
