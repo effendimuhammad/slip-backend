@@ -3,6 +3,8 @@ import {
   deleteSlipDetailModels,
   getDataPartNumberDetailModels,
   getDataPartNumberDetailbyDateModels,
+  getDataPartNumberRangeDetailbyDateModels,
+  getDataPartNumberRangebyDateModels,
 } from "../models/slipListModels.js";
 
 export const deleteSlipNoController = async (req, res) => {
@@ -55,6 +57,61 @@ export const getDataPartNumberDetailbyDateController = async (req, res) => {
     const result = await getDataPartNumberDetailbyDateModels(
       bu_code,
       create_date
+    );
+    const data = result.recordset;
+    res.json({
+      message: "GET detail Part Number Success",
+      data: data,
+    });
+  } catch (err) {
+    console.error("Error getting data:", err);
+    res.status(400).json({
+      message: "Error getting data",
+      error: err.message,
+    });
+  }
+};
+
+export const getDataPartNumberRangeDetailbyDateController = async (
+  req,
+  res
+) => {
+  const { bu_code, startDate, endDate } = req.params;
+  console.log("startDate", startDate);
+  console.log("endDate", endDate);
+  console.log("bu_code", bu_code);
+
+  try {
+    const result = await getDataPartNumberRangeDetailbyDateModels(
+      bu_code,
+      startDate,
+      endDate
+    );
+    const data = result.recordset;
+    res.json({
+      message: "GET detail Part Number Success",
+      data: data,
+    });
+  } catch (err) {
+    console.error("Error getting data:", err);
+    res.status(400).json({
+      message: "Error getting data",
+      error: err.message,
+    });
+  }
+};
+
+export const getDataPartNumberRangebyDateController = async (req, res) => {
+  const { bu_code, startDate, endDate } = req.params;
+  console.log("startDate", startDate);
+  console.log("endDate", endDate);
+  console.log("bu_code", bu_code);
+
+  try {
+    const result = await getDataPartNumberRangebyDateModels(
+      bu_code,
+      startDate,
+      endDate
     );
     const data = result.recordset;
     res.json({
