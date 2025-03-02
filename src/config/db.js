@@ -1,15 +1,27 @@
 import sql from "mssql";
 
+// const config = {
+//   user: "fendi",
+//   password: "Alhamdulillah12",
+//   database: "DX_EXPENSE_PART",
+//   server: "p40160",
+//   options: {
+//     encrypt: false,
+//     trustServerCertificate: true,
+//   },
+// };
+
 const config = {
-  user: "fendi",
-  password: "Alhamdulillah12",
+  user: "sa",
+  password: "@kaldera2525",
   database: "DX_EXPENSE_PART",
-  server: "p40160",
+  server: "DESKTOP-TI1RFKM\\SQLEXPRESS",
   options: {
     encrypt: false,
     trustServerCertificate: true,
   },
 };
+
 
 const connectDb = async () => {
   try {
