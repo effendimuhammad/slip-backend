@@ -15,6 +15,7 @@ import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
 import upload from "./middleware/multer.js";
 import masterPartImageRoutes from "./routes/masterPartImageRoutes.js";
+import emailRoutes from "./routes/emailRoutes.js";
 
 // Middleware
 const app = express();
@@ -61,6 +62,9 @@ app.use("/api/buCard", buCardRoutes);
 //upload
 app.use("/upload", upload.single("file"), masterPartImageRoutes);
 app.use("/file", masterPartImageRoutes);
+
+//email
+app.use("/api/email", emailRoutes);
 
 const PORT = 4100;
 app.listen(PORT, () => {
