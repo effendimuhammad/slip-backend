@@ -4,3 +4,14 @@ const EmailMessageType = {
 };
 
 export default EmailMessageType;
+
+//hit API
+// {
+//   "to": "effendimuhammad7@gmail.com",
+
+//   "from": {
+//     "name": "Dari Fendi",
+//     "address": "effendimuhammad7@gmail.com"
+//   }
+
+// }
