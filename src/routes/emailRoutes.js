@@ -1,9 +1,9 @@
 import express from "express";
-import sendEmailController from "../controller/emailController.js";
+import { sendEmailRev } from "../middleware/email.js";
 
 const router = express.Router();
 
 // Rute untuk mengatur data email
-router.post("/set-email-data", sendEmailController);
+router.post("/send-email", sendEmailRev);
 
 export default router;

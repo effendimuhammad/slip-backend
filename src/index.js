@@ -16,6 +16,7 @@ import bodyParser from "body-parser";
 import upload from "./middleware/multer.js";
 import masterPartImageRoutes from "./routes/masterPartImageRoutes.js";
 import emailRoutes from "./routes/emailRoutes.js";
+import "./middleware/cronJob.js";
 
 // Middleware
 const app = express();
