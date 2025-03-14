@@ -6,8 +6,9 @@ import {
 
 const router = express.Router();
 
-//CREATE PART
+//POST MASTER DOCUMENT EXCEL ,PDF ,PPT, JPG, ETC
 router.post("/create", createPartImageController);
+//GET MASTER DOCUMENT EXCEL ,PDF ,PPT, JPG, ETC
 router.get("/files", getFilesController);
 
 export default router;

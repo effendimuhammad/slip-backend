@@ -6,7 +6,9 @@ import {
 
 const router = express.Router();
 
+//LOGIN
 router.post("/login", loginController);
+//...
 router.get("/:id", loginControllerNav);
 
 export default router;
