@@ -13,9 +13,9 @@ import {
 
 const router = express.Router();
 
-//GET PART
+//GET PART NUMBER  SHOW
 router.get("/get/:bu_code", getAllPartController);
-//CREATE PART
+//POST ADD CREATE PART
 router.post("/create", createPartController);
 //UPDATE PART
 router.patch("/update/:partnumber_id", updatePartController);
@@ -23,14 +23,13 @@ router.patch("/update/:partnumber_id", updatePartController);
 router.delete("/delete/:partnumber_id", deletePartController);
 //GET PART BASE ON BU
 router.get("/getEdit/:partnumber_id", getPartBaseOnBuController);
-
 //GET PART MASTER BASE ON BU
 router.get("/getPartMaster/:bu_code", getTotalMasterPartController);
-
+//...
 router.post("/createFile", createMasterPartFileController);
-
+//POST MASTER DOCUMENT EXCEL
 router.post("/insertFile", insertMasterPartFileController);
-
+//GET MASTER DOCUMENT EXCEL
 router.get("/downloadFile", downloadFile);
 
 export default router;

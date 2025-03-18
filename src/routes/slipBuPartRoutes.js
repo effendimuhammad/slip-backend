@@ -3,6 +3,7 @@ import { getAllBuPartSlipController } from "../controller/slipBuCardController.j
 
 const router = express.Router();
 
+//GET BU BASED ON NIM USER
 router.get("/getSlipBu/:nim", getAllBuPartSlipController);
 
 export default router;
